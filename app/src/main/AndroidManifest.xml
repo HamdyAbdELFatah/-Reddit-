@@ -3,6 +3,7 @@
     package="com.raywenderlich.android.jetreddit">
 
     <application
+        android:name=".JetRedditApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
