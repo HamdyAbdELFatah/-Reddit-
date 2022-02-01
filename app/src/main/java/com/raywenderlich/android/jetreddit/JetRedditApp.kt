@@ -20,7 +20,7 @@ import com.raywenderlich.android.jetreddit.screens.AddScreen
 import com.raywenderlich.android.jetreddit.screens.HomeScreen
 import com.raywenderlich.android.jetreddit.screens.MyProfileScreen
 import com.raywenderlich.android.jetreddit.screens.SubredditsScreen
-import com.raywenderlich.android.jetreddit.theme.JetRedditTheme
+import com.raywenderlich.android.jetreddit.ui.theme.JetRedditTheme
 import com.raywenderlich.android.jetreddit.viewmodel.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
