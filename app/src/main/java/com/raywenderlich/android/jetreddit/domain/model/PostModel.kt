@@ -1,5 +1,6 @@
 package com.raywenderlich.android.jetreddit.domain.model
 
+
 import com.raywenderlich.android.jetreddit.R
 
 data class PostModel(
@@ -25,6 +26,18 @@ data class PostModel(
       "523",
       PostType.IMAGE,
       "4h",
+      R.drawable.compose_course
+    )
+
+    val EMPTY = PostModel(
+      "raywenderlich",
+      "raywenderlich.com",
+      "",
+      "",
+      "0",
+      "0",
+      PostType.TEXT,
+      "0h",
       R.drawable.compose_course
     )
   }

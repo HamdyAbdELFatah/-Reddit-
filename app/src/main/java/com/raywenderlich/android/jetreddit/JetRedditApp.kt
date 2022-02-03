@@ -2,6 +2,7 @@ package com.raywenderlich.android.jetreddit
 
 
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -16,15 +17,13 @@ import androidx.compose.ui.unit.dp
 import com.raywenderlich.android.jetreddit.appdrawer.AppDrawer
 import com.raywenderlich.android.jetreddit.routing.JetRedditRouter
 import com.raywenderlich.android.jetreddit.routing.Screen
-import com.raywenderlich.android.jetreddit.screens.AddScreen
-import com.raywenderlich.android.jetreddit.screens.HomeScreen
-import com.raywenderlich.android.jetreddit.screens.MyProfileScreen
-import com.raywenderlich.android.jetreddit.screens.SubredditsScreen
+import com.raywenderlich.android.jetreddit.screens.*
 import com.raywenderlich.android.jetreddit.ui.theme.JetRedditTheme
 import com.raywenderlich.android.jetreddit.viewmodel.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+@ExperimentalAnimationApi
 @Composable
 fun JetRedditApp(viewModel: MainViewModel) {
   JetRedditTheme {
@@ -32,6 +31,7 @@ fun JetRedditApp(viewModel: MainViewModel) {
   }
 }
 
+@ExperimentalAnimationApi
 @Composable
 private fun AppContent(viewModel: MainViewModel) {
   val scaffoldState: ScaffoldState = rememberScaffoldState()
@@ -66,7 +66,7 @@ fun getTopBar(
   scaffoldState: ScaffoldState,
   coroutineScope: CoroutineScope
 ): @Composable (() -> Unit) {
-  if (screenState == Screen.MyProfile) {
+  if (screenState == Screen.MyProfile || screenState == Screen.ChooseCommunity) {
     return {}
   } else {
     return { TopAppBar(scaffoldState = scaffoldState, coroutineScope = coroutineScope) }
@@ -103,6 +103,7 @@ fun TopAppBar(scaffoldState: ScaffoldState, coroutineScope: CoroutineScope) {
   )
 }
 
+@ExperimentalAnimationApi
 @Composable
 private fun MainScreenContainer(
   modifier: Modifier = Modifier,
@@ -116,8 +117,9 @@ private fun MainScreenContainer(
     when (screenState.value) {
       Screen.Home -> HomeScreen(viewModel)
       Screen.Subscriptions -> SubredditsScreen(viewModel)
-      Screen.NewPost -> AddScreen()
+      Screen.NewPost -> AddScreen(viewModel)
       Screen.MyProfile -> MyProfileScreen(viewModel)
+      Screen.ChooseCommunity -> ChooseCommunityScreen(viewModel)
     }
   }
 }
