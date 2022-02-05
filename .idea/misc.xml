@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Hamdy-PC/AndroidStudioProjects/RedditClone/app/src/main/res/drawable/splash_background.xml" value="0.1105" />
+        <entry key="..\:/Users/Hamdy-PC/AndroidStudioProjects/RedditClone/app/src/main/res/layout/activity_chat.xml" value="0.3375" />
+        <entry key="..\:/Users/Hamdy-PC/AndroidStudioProjects/RedditClone/app/src/main/res/layout/view_trending_topic.xml" value="0.3375" />
       </map>
     </option>
   </component>
